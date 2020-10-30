@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>portfolio</title>
+
+  <!-- links -->
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Joesfin+Sans">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script defer src="http://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
+  <style type="text/css">
+
+  /*header and footer styling*/
+
+ .navbar{
+      font-weight: bold;    
+   }
+
+   *{
+    margin:0; padding:0; font-family: 'Joesfin Sans', Sans serif;
+  }
+
+  footer{
+      background: #f1f1f1;
+      padding:30px;
+      font-color:white;
+      margin-top:200px;
+    }
+
+    .logo{
+  width: 180px;
+}
+
+    .footer-container{
+      padding:30px;
+      width: auto;
+      
+    }
+    .social-media{
+      margin: 20px 0;
+    }
+
+    .social-media a{
+      color: white;
+      margin-right: 25px;
+      font-size: 22px;
+      text-decoration: none;
+      transition: .3s linear;
+    }
+
+    .social-media a:hover
+    {
+      color: #fc5c65
+    }
+
+    .bg
+    {
+      background-color: black;
+    } 
+
+ 
+    /*page css*/
+ 
+.btn-lg
+  {
+    padding: 8px 8px;
+    font-size: 40px;
+    border-radius: 8px;
+    width:40%;
+    background-color: black; 
+  }
+  .buttoncenter
+      {
+        padding-top: 30%;
+        padding-bottom: 30%;
+      }
+
+    /*for mobile*/
+
+    @media screen and (max-width:960px) 
+    {
+       .buttoncenter
+      {
+        padding-top: 30%;
+        padding-bottom: 30%;
+      }
+      
+      .btn-lg
+      {
+        padding: 8px 8px;
+        font-size: 30px;
+        border-radius: 8px;
+        width:0%;
+        background-color: black; 
+      }
+      .footer-container{
+    max-width: 600px;
+  }
+  .border-right{
+    border-style: solid;
+    border-top-color: white;
+    border-left-color: white; 
+    border-bottom-color: black;
+    border-right:0 !important;
+  }
+    
+  }
+
+ 
+    /*page css*/
+
+.main{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.main h1{
+  position: relative;
+  height: auto;
+  width: 550px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin:5% 0 2% 0;
+  text-align: center;
+  font-size: 2.8em;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  color:black;
+}
+.main p{
+  position: relative;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  color: black;
+}
+.main .gallery{
+  position: relative;
+  height: auto;
+  width: 90%;
+  margin: auto;
+  padding: 45px 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto; /*i write auto four time because we want four rows*/
+  grid-gap: 2vh;
+  grid-auto-flow: dense;
+}
+.main .gallery .img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9 );
+  border-radius: 2px;
+}
+.main .gallery .img:first-child{
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(2n+3){
+  grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(4n+5){
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(6n+7){
+  grid-row-start: span 1;
+}
+.main .gallery .img:nth-child(8n+9){
+  grid-column-start: span 1;
+  grid-row-start: span 1;
+}
+.main .gallery .img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.5) grayscale(100);
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+.main .gallery .img:hover img{
+  filter: brightness(1) grayscale(0);
+}
+
+.buttoncenter
+      {
+        padding-top: 30%;
+        padding-bottom: 30%;
+      }
+
+@media only screen and (max-width: 768px){
+  .main h1{
+    font-size: 1.8em;
+    width: 400px;
+  }
+  .main p{
+    font-size: 1.2em;
+  }
+  .main .gallery{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+@media only screen and (max-width: 430px){
+  .main h1{
+    font-size: 1.2em;
+    width: 300px;
+  }
+  .main p{
+    font-size: 0.89em;
+  }
+  .main .gallery{
+    display: block;
+  }
+  .main .gallery .img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin:2% 0;
+  }
+  .main .gallery .img img{
+    display: block;
+    filter: brightness(1) grayscale(0);
+  }
+}
+
+    /*for mobile*/
+
+    @media screen and (max-width:960px) 
+    {
+       .buttoncenter
+      {
+        padding-top: 30%;
+        padding-bottom: 30%;
+      }
+      
+      .btn-lg
+      {
+        padding: 8px 8px;
+        font-size: 40px;
+        border-radius: 8px;
+        width:40%;
+        background-color: black; 
+      }
+    
+  }
+  
+  .btn-lg
+  {
+    padding: 8px 8px;
+    font-size: 40px;
+    border-radius: 8px;
+    width:40%;
+    background-color: black; 
+  }
+
+  .testimonials{
+  padding: 40px 0;
+  background: #f1f1f1;
+  color: #434343;
+  text-align: center;
+}
+.inner{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.border{
+  width: 160px;
+  height: 5px;
+  background: #6ab04c;
+  margin: 26px auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col{
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.testimonial{
+  background: #fff;
+  padding: 30px;
+}
+.testimonial img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name{
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.stars{
+  color: #6ab04c;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width:960px) {
+.col{
+  flex: 100%;
+  max-width: 80%;
+}
+}
+
+@media screen and (max-width:600px) {
+.col{
+  flex: 100%;
+  max-width: 100%;
+}
+}
+
+/*end of css testimonials*/
+
+body{
+  min-height: 100vh;
+  background: #f1f1f1;;
+}
+
+.container{
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pricing-table{
+  background: #f1f1f1;
+  flex: 1;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+.pricing-header{
+  color: #fff;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.price{
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.price span{
+  font-size: 30px;
+}
+
+.title{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,50%);
+  width: 80%;
+  max-width: 360px;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.pricing-list{
+  padding: 10px 20px;
+}
+
+.pricing-list li{
+  margin: 8px 0;
+  font-size: 14px;
+  color: #344;
+  text-align: center;
+}
+
+.border{
+  width: 80px;
+  height: 1px;
+  background: #ddd;
+  margin: auto;
+}
+
+.pricing-table a{
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  border: 1px solid;
+  max-width: 360px;
+  transition: .2s linear;
+}
+.pricing-table a:hover{
+  border-radius: 30px;
+}
+.table1 .pricing-header{
+  background: #2980b9;
+}
+.table2 .pricing-header{
+  background: #2c3e50;
+}
+.table3 .pricing-header{
+  background: #c0392b;
+}
+
+.table1 .title{
+  background-image: linear-gradient(125deg,#3498db,#9b59b6);
+}
+.table2 .title{
+  background-image: linear-gradient(125deg,#34495e,#95a5a6);
+}
+.table3 .title{
+  background-image: linear-gradient(125deg,#e74c3c,#f39c12);
+}
+
+.table1 a{
+  color: #2980b9;
+}
+.table2 a{
+  color: #2c3e50;
+}
+.table3 a{
+  color: #c0392b;
+}
+
+.table1 a:hover{
+  background: #2980b9;
+  color: #fff;
+}
+.table2 a:hover{
+  background: #2c3e50;
+  color: #fff;
+}
+.table3 a:hover{
+  background: #c0392b;
+  color: #fff;
+}
+
+@media screen and (max-width:780px) {
+  .pricing-table{
+    flex: 100%;
+  }
+}
+  </style>
+
+
+</head>
+
+
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg">
+  
+  <a class="navbar-brand" href="img/l.png">THE CREATIVES</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+      </li>
+     
+    </ul>
+    
+  </div>
+</nav>
+    </header>
+
+
+    <!-- every page slider -->
+
+     <section>
+      <div>
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/portfolio.jpg" class="d-block w-100 sizing" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+         <h1>PORTFOLIO</h1>
+    <h3>hover over the image to see the magic:-</h3>
+         
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/Contact.jpg" class="d-block w-100 sizing" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="btn btn-dark btn-lg " href="#">Contact</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/se.jpeg" class="d-block w-100 sizing" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <a class="btn btn-dark btn-lg " href="#">Service extended</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+    </section>
+<!-- page slider end -->
+
+
+
+<section>
+<div class="main" style="background-color: #dcdde1">
+   
+    <div class="gallery" style="background-color: #dcdde1">
+      <div class="img">
+        <a><img src="p1.jpg"/></a>
+          </div>
+      <div class="img">
+        <a><img src="p2.jpg"/></a>
+       </div>
+      <div class="img">
+        <a><img src="p3.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p4.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p5.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p6.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p7.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p8.jpg"/></a>
+      </div>
+      <div class="img">
+        ><img src="p9.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p11.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p12.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p13.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p14.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p15.jpg"/></a>
+      </div>
+      <div class="img">
+        <a><img src="p16.jpg"/></a>
+      </div>
+    </div>
+  </div>
+
+</section>
+  
+
+<section>
+    
+  <div class="container">
+      <div class="pricing-table table2">
+        <div class="pricing-header">
+          <div class="price"><span>$</span>19</div>
+          <div class="title">Basic</div>
+        </div>
+        <ul class="pricing-list">
+          <li><strong>20GB</strong> Storage</li>
+          <div class="border"></div>
+          <li><strong>4</strong> Email Address</li>
+          <div class="border"></div>
+          <li><strong>1</strong> Domain Name</li>
+          <div class="border"></div>
+          <li><strong>24h</strong> Support</li>
+          <div class="border"></div>
+          <li><strong>2</strong> Account</li>
+          <div class="border"></div>
+          <li><strong>2</strong> Websites</li>
+        </ul>
+        <a href="#">Order Now</a>
+      </div>
+
+      <div class="pricing-table table2">
+        <div class="pricing-header">
+          <div class="price"><span>$</span>39</div>
+          <div class="title">Pro</div>
+        </div>
+        <ul class="pricing-list">
+          <li><strong>60GB</strong> Storage</li>
+          <div class="border"></div>
+          <li><strong>10</strong> Email Address</li>
+          <div class="border"></div>
+          <li><strong>3</strong> Domain Name</li>
+          <div class="border"></div>
+          <li><strong>24h</strong> Support</li>
+          <div class="border"></div>
+          <li><strong>1</strong> Account</li>
+          <div class="border"></div>
+          <li><strong>4</strong> Websites</li>
+        </ul>
+        <a href="#">Order Now</a>
+      </div>
+
+      <div class="pricing-table table2">
+        <div class="pricing-header">
+          <div class="price"><span>$</span>79</div>
+          <div class="title">Premiem</div>
+        </div>
+        <ul class="pricing-list">
+          <li><strong>200GB</strong> Storage</li>
+          <div class="border"></div>
+          <li><strong>30</strong> Email Address</li>
+          <div class="border"></div>
+          <li><strong>10</strong> Domain Name</li>
+          <div class="border"></div>
+          <li><strong>24h</strong> Support</li>
+          <div class="border"></div>
+          <li><strong>3</strong> Account</li>
+          <div class="border"></div>
+          <li><strong>6</strong> Websites</li>
+        </ul>
+        <a href="#">Order Now</a>
+      </div>
+    </div>
+</section>
+
+<section>
+  
+   <div class="testimonials">
+      <div class="inner">
+        <h1>Testimonials</h1>
+        <div class="border"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="testimonial">
+              <img src="./img/8.png" alt="">
+              <div class="name">Sualeha Siddiqui</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="testimonial">
+              <img src="./img/9.png" alt="">
+              <div class="name">Alizah Munaf</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="testimonial">
+              <img src="./img/8.png" alt="">
+              <div class="name">Nabiha Sheikh</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</section>
+ <footer class="bg-dark">
+
+<div class="d-flex flex-wrap">
+      <div class="footer-container col-lg-8 col-md-6 col-12">
+        <div>
+        
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span class="text-white"><i class="fas fa-envelope"></i> &nbsp; info@samibros.com</span>
+          
+          <p class="text-white">© 2020 Created By DarkCode All Rights Reserved.</p>
+         </div>  
+      </div>
+      <div class="d-flex flex- wrap col-lg-4 col-md-6 col-12 px-5"><img src="img/logo.png" alt="" class="logo"></div>
+      </div>
+
+    </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
